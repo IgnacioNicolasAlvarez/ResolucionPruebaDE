@@ -1,15 +1,14 @@
 -- Calcula  el  listado  de  los  10  productos  con  menos  unidades  vendidas  (hint:  incluye 
 -- productos sin ventas)  
 SELECT
-    p.id,
-    p.nombre,
-    sum(coalesce(v.cantidad, 0)) AS cantidad_vendidas
+    p.product_id, 
+    sum(coalesce(ol.product_qty, 0)) AS least_product_qty
 FROM
-    ventas v
-    RIGHT JOIN productos p ON v.producto_id = p.id
+    orderlines ol
+    RIGHT JOIN products p ON ol.product_id = p.product_id 
 GROUP BY
-    p.id
+    p.product_id 
 ORDER BY
-    sum(coalesce(v.cantidad, 0))
+    sum(coalesce(ol.product_qty, 0))
 LIMIT
     10
