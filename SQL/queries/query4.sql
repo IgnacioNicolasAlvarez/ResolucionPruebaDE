@@ -25,3 +25,8 @@ SELECT
     tier
 FROM
     product_tiers;
+
+
+-- La subconsulta interna calcula la facturación total para cada producto mediante la suma de la cantidad de productos multiplicada por el precio de cada producto.
+
+-- La subconsulta interna se utiliza en la tabla temporal product_tiers, donde se aplica la función NTILE para asignar cada producto a uno de los tres niveles (tiers) basándose en su facturación total. ORDER BY total_revenue DESC garantiza que los productos con la mayor facturación estarán en el tier más alto.
