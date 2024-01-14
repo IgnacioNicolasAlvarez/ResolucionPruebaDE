@@ -9,6 +9,7 @@ uvicorn = "*"
 ruff = "*"
 black = "*"
 pandas = "*"
+pytest = "*"
 
 [dev-packages]
 
