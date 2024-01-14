@@ -2,6 +2,10 @@ import pandas as pd
 import json
 
 
+def simulated_csv_extraction():
+    return "./ETL/MarketAvrgTicketSample.csv"
+
+
 def load_csv(file_path):
     return pd.read_csv(file_path, delimiter=";")
 
@@ -56,3 +60,4 @@ def convert_csv_to_json(csv_file_path, json_file_path):
     df = load_csv(csv_file_path)
     json_data = convert_to_json(df)
     save_to_json(json_data, json_file_path)
+    return json_data
